@@ -53,7 +53,7 @@ img[data-lazy-img] {
 .ad--wrapper--desktop {
   display: none;
   @include mq($from: desktop) {
-    display: block;
+    display: none;
     position: absolute;
     width: 300px;
     position: absolute;
@@ -224,6 +224,7 @@ h1 {
       }
     }
 
+
     .content__dateline {
       font-size: 12px;
       min-height: 0;
@@ -295,6 +296,55 @@ h1 {
         a {
           color: $darkBlue;
         }
+      }
+
+      .header-share-container {
+        padding: 6px 10px 12px;
+        border-bottom: solid 1px $grey;
+        width: 100vw;
+
+    }
+
+      .interactive-share {
+          height: 32px;
+          width: 32px;
+          border-radius: 34px;
+          display: inline-block;
+          border: 1px solid $grey;
+          cursor: pointer;
+          outline: none;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 32px;
+          &[data-network='facebook'] {
+              background-image: url("<%= path %>/assets/facebook.svg");
+          }
+          &[data-network='twitter'] {
+              background-image: url("<%= path %>/assets/twitter.svg");
+          }
+          &[data-network='email'] {
+              background-image: url("<%= path %>/assets/mail.svg");
+          }
+      }
+
+      .interactive-share:hover {
+          cursor: pointer;
+          border: 1px solid $grey;
+
+      		&[data-network='facebook'] {
+      			background-image: url("<%= path %>/assets/facebook-white.svg");
+            background-color: $grey;
+      		}
+      		&[data-network='twitter'] {
+      				background-image: url("<%= path %>/assets/twitter-white.svg");
+              background-color: $grey;
+
+      		}
+      		&[data-network='email'] {
+      				background-image: url("<%= path %>/assets/mail-white.svg");
+              background-color: $grey;
+
+      		}
       }
     }
   }
